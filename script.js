@@ -5,12 +5,12 @@ let boxFunction = 'solid';
 const slider = document.getElementById('myRange');
 const sliderText = document.getElementById('sliderText');
 
-sliderText.innerHTML = slider.value;
+sliderText.innerHTML = `Grid size: ${slider.value}x${slider.value}`;
 createGrid(slider.value, boxFunction);
 
 slider.oninput = function() { 
-    sliderText.innerHTML = this.value;
-    createGrid(this.value, boxFunction);
+    sliderText.innerHTML = `Grid size: ${slider.value}x${slider.value}`;
+    createGrid(slider.value, boxFunction);
 }
 
 
@@ -25,8 +25,8 @@ document.getElementById(`fadeButton`).addEventListener('click', function() {
     createGrid(slider.value, boxFunction);
 });
 
-document.getElementById(`grayingButton`).addEventListener('click', function() {
-    boxFunction = 'graying';
+document.getElementById(`darkenButton`).addEventListener('click', function() {
+    boxFunction = 'darken';
     createGrid(slider.value, boxFunction);
 });
 
@@ -66,7 +66,7 @@ function createGrid(size, boxFunction) {
                 div.classList.remove('fading');
                 setTimeout(() => div.classList.add('fading'), 1);
             });
-        } else if (boxFunction === 'graying') {
+        } else if (boxFunction === 'darken') {
             let alphaV = 0;
             div.addEventListener('mouseover', function() {
                 alphaV += 0.1;

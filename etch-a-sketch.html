@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
+    <meta charset='UTF-8'>
+    <title>Etch-a-Sketch</title>
     <link rel='stylesheet' href='style.css'>
     <script src='script.js' defer></script>
 </head>
@@ -8,17 +10,19 @@
 <body>
     <div id='columns'>
         <div id='sidebar'>
+            <header>
+                <h1>Etch-a-Sketch</h1>
+            </header>
             <button id='solidButton'>Solid</button>
             <button id='fadeButton'>Fade</button>
-            <button id='grayingButton'>Graying</button>
+            <button id='darkenButton'>Darken</button>
             <button id='rainbowButton'>Rainbow</button>
             <div class='slideContainer'>
                 <input type='range' min='4' max='64' value='16' class='slider' id='myRange'>
             </div>
             <div id='sliderText'></div>
         </div>
-        <div id='container'>
-        </div>
+        <div id='container'></div>
     </div>
 </body>
 
